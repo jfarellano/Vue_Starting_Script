@@ -1,0 +1,67 @@
+vue create $1
+cd $1
+npm install vue-router
+npm i vue bootstrap-vue bootstrap
+npm i -S aos@next
+npm install axios
+npm install -D sass-loader sass
+npm install vee-validate --save
+npm install vue-snotify
+rm src/main.js
+rm src/App.vue
+
+echo "//Vue dependencies" > src/main.js
+echo "import Vue from 'vue'" >> src/main.js
+echo "import App from './App.vue'" >> src/main.js
+echo "//Bootstrap dependencies" >> src/main.js
+echo "import BootstrapVue from 'bootstrap-vue'" >> src/main.js
+echo "import 'bootstrap/dist/css/bootstrap.css'" >> src/main.js
+echo "import 'bootstrap-vue/dist/bootstrap-vue.css'" >> src/main.js
+echo "import AOS from 'aos';" >> src/main.js
+echo "import 'aos/dist/aos.css';" >> src/main.js
+echo "import router from './router.js'" >> src/main.js
+echo "import VeeValidate from 'vee-validate'" >> src/main.js
+echo "import Snotify from 'vue-snotify'" >> src/main.js
+echo "import 'vue-snotify/styles/simple.css'" >> src/main.js
+echo "Vue.use(BootstrapVue)" >> src/main.js
+echo "Vue.use(VeeValidate);" >> src/main.js
+echo "Vue.use(Snotify)" >> src/main.js
+echo "Vue.config.productionTip = false" >> src/main.js
+echo "new Vue({" >> src/main.js
+echo "   created() {" >> src/main.js
+echo "    AOS.init();" >> src/main.js
+echo "  }," >> src/main.js
+echo "  router," >> src/main.js
+echo "  render: h => h(App)," >> src/main.js
+echo "}).\$mount('#app')" >> src/main.js
+
+echo "<template>" > src/App.vue
+echo "  <div id="app">" >> src/App.vue
+echo "    <router-view/>" >> src/App.vue
+echo "  </div>" >> src/App.vue
+echo "</template>" >> src/App.vue
+echo "<script>" >> src/App.vue
+echo "export default {" >> src/App.vue
+echo "  name: 'app'," >> src/App.vue
+echo "  components: {" >> src/App.vue
+echo "  }" >> src/App.vue
+echo "}" >> src/App.vue
+echo "</script>" >> src/App.vue
+echo "<style>" >> src/App.vue
+echo "</style>" >> src/App.vue
+
+echo "import Vue from 'vue'" > src/router.js
+echo "import Router from 'vue-router'" >> src/router.js
+echo "import HelloWorld from './components/HelloWorld.vue'" >> src/router.js
+echo "Vue.use(Router)" >> src/router.js
+echo "export default new Router ({" >> src/router.js
+echo "    routes: [" >> src/router.js
+echo "        {" >> src/router.js
+echo "            path: '/'," >> src/router.js
+echo "            name: 'HelloWorld'," >> src/router.js
+echo "            component: HelloWorld" >> src/router.js
+echo "        }," >> src/router.js
+echo "    ]" >> src/router.js
+echo "})" >> src/router.js
+
+npm run serve
