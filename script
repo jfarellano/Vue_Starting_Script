@@ -5,6 +5,7 @@ npm i vue bootstrap-vue bootstrap
 npm i -S aos@next
 npm install axios
 npm install -D sass-loader sass
+npm install -D pug pug-plain-loader
 npm install vee-validate --save
 npm install vue-snotify
 rm src/main.js
